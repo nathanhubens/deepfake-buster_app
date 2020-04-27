@@ -1,5 +1,4 @@
 voila
-fastai2>=0.0.16
 fastai>=1.0.60
 pillow<7
 packaging
