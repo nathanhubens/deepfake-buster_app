@@ -128,7 +128,7 @@ def hooked_ReLU(m,xb,clas):
         preds[0,int(clas)].backward()
         
 def guided_backprop(learn,xb,y):
-    xb = xb.cuda()
+    #xb = xb.cuda()
     m = learn.model.eval();
     xb.requires_grad_();
     if not xb.grad is None:
@@ -147,7 +147,7 @@ def get_grad_heatmap(learn,target_layer, xb,y,size):
     '''
     Main function to get hmap for heatmap and xb_grad for guided backprop
     '''
-    xb = xb.cuda()
+    #xb = xb.cuda()
     m = learn.model.eval();
     #target_layer = m[0][-1][-1] # last layer of group 0
     hook_a,hook_g = hooked_backward(m,xb,target_layer,y)
